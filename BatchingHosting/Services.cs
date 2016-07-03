@@ -17,7 +17,7 @@ namespace Artech.BatchingHosting
     public interface IBar
     {
         [OperationContract]
-        void Doth();
+        void Doth2();
     }
 
     [ServiceContract(Namespace = "http://www.artech.com")]
@@ -27,18 +27,20 @@ namespace Artech.BatchingHosting
         void Doth();
     }
 
-    public class FooService : IFoo
+    public class FooService : IFoo,IBar
     {
         public void Doth() { }
+        public void Doth2() { }
     }
 
     public class BarService : IBar
     {
-        public void Doth() { }
+        public void Doth2() { }
     }
 
     public class BazService : IBaz
     {
         public void Doth() { }
     }
+    
 }
